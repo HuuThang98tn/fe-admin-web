@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import img_login from "../../../Common/image/img_login.png";
-import FormLogin from "./FormLogin";
+import FormLogin from "../../../components/auth/FormLogin";
 import "./ScreenLogin.css";
 function ScreenLogin() {
   return (
@@ -11,7 +11,7 @@ function ScreenLogin() {
         <div className="mContainer">
           <div className="layout-left">
             <div className="layout-from">
-              <FormLogin />
+              <FormLogin title="Đăng nhập" />
             </div>
           </div>
           <div className="layout-right">

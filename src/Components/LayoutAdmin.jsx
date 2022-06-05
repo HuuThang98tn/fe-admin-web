@@ -71,8 +71,8 @@ function LayoutAdmin() {
   );
   const items = [
     getItem(
-      ["Tổng Quan",<NavLink to="home"/>],
-      "home",
+      ["Tổng Quan", <NavLink to="tong_quan" />],
+      "1",
       <img style={{ width: "10%" }} src={image2} alt="" />
     ),
     getItem(
@@ -81,12 +81,12 @@ function LayoutAdmin() {
       <img style={{ width: "10%" }} src={image4} alt="" />,
       [
         getItem(
-          ["Danh sách sản phẩm",<NavLink to="home-admin"/>],
+          ["Danh sách sản phẩm", <NavLink to="danhSach_sanPham" />],
           "2",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
         getItem(
-          ["Thêm sản phẩm",<NavLink to='admin'/>],
+          ["Thêm sản phẩm", <NavLink to="them_sanPham" />],
           "11",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
@@ -98,18 +98,18 @@ function LayoutAdmin() {
       <img style={{ width: "10%" }} src={Vector} alt="" />,
       [
         getItem(
-          "Đối tượng sử dụng",
+          ["Đối tượng sử dụng", <NavLink to="doiTuong_SuDung" />],
           "3",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
         ,
         getItem(
-          "Danh sách thể loại",
+          ["Thêm loại sản phẩm", <NavLink to="them_LoaiSanPham" />],
           "12",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
         getItem(
-          "Thêm thể loại",
+          ["Danh sách thể loại", <NavLink to="danhSach_LoaiSanPham" />],
           "333",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
@@ -122,7 +122,7 @@ function LayoutAdmin() {
       [getItem("Option 4", "4"), getItem("Option 6", "13")]
     ),
     getItem(
-      "Khách hàng đặt hàng",
+      ["Khách hàng đặt hàng", <NavLink to="khachHang_DatHang" />],
       "sub5",
       <img style={{ width: "10%" }} src={image5} alt="" />
     ),
@@ -132,21 +132,16 @@ function LayoutAdmin() {
       <img style={{ width: "10%" }} src={image6} alt="" />,
       [
         getItem(
-          "Sản phẩm đã bán",
+          ["Sản phẩm đã bán", <NavLink to="sanPham_DaBan" />],
           "6",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
         getItem(
-          "Thống kê lợi nhuận",
+          ["Thống kê lợi nhuận", <NavLink to="thongKe_loiNhuan" />],
           "15",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
       ]
-    ),
-    getItem(
-      "Người dùng",
-      "sub7",
-      <img style={{ width: "10%" }} src={image7} alt="" />
     ),
     getItem(
       "Mạng xã hội",
@@ -154,19 +149,24 @@ function LayoutAdmin() {
       <img style={{ width: "10%" }} src={image8} alt="" />,
       [
         getItem(
-          "Đăng bài viết",
+          ["Đăng bài viết", <NavLink to="themBai_Viet" />],
           "8",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
         getItem(
-          "Bài viết của bạn",
+          ["Bài viết của bạn", <NavLink to="danhSach_baiViet" />],
           "17",
           <img style={{ width: "10%" }} src={imager10} alt="" />
         ),
       ]
     ),
     getItem(
-      "Thông tin cá nhân",
+      ["Người dùng", <NavLink to="danhSach_NguoiDung" />],
+      "sub7",
+      <img style={{ width: "10%" }} src={image7} alt="" />
+    ),
+    getItem(
+      ["Thông tin cá nhân", <NavLink to="thongTin_shop" />],
       "sub9",
       <img style={{ width: "10%" }} src={image9} alt="" />
     ),
@@ -208,7 +208,7 @@ function LayoutAdmin() {
           onClick={onClick}
           mode="inline"
           items={items}
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={1}
         />
       </Sider>
       <Layout className="site-layout">

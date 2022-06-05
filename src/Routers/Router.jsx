@@ -5,6 +5,7 @@ import LayoutAdmin from "../components/LayoutAdmin";
 
 //auth
 import ScreenLogin from "../container/screens/auth/ScreenLogin";
+import ScreenForgotPassword from "../container/screens/auth/ScreenForgotPassword";
 
 //Tổng quan
 import ScreenOverview from "../container/screens/overview/ScreenOverview";
@@ -36,11 +37,40 @@ import ScreenListPost from "../container/screens/posts/ScreenListPost";
 const Router = () => {
   return (
     <Routes>
-      <Route path="/admin-login" element={<ScreenLogin />}></Route>
-      <Route path="/trang-chu" element={<LayoutAdmin />}>
-        <Route path="home" element={<ScreenOverview />} />
-        <Route path="home-admin" element={<ScreenCreateProduct />} />
-        <Route path="admin" element={<ScreenListProduct />} />
+      <Route path="/shop_dang_nhap" element={<ScreenLogin />}></Route>
+      <Route
+        path="/shop_quen_mat_khau"
+        element={<ScreenForgotPassword />}
+      ></Route>
+      <Route path="/shop" element={<LayoutAdmin />}>
+        <Route path="tong_quan" element={<ScreenOverview />} />
+
+        <Route path="them_sanPham" element={<ScreenCreateProduct />} />
+
+        <Route path="danhSach_sanPham" element={<ScreenListProduct />} />
+
+        <Route path="them_LoaiSanPham" element={<ScreenCreateTypeProduct />} />
+
+        <Route
+          path="danhSach_LoaiSanPham"
+          element={<ScreenListTypeProduct />}
+        />
+
+        <Route path="doiTuong_SuDung" element={<ScreenObjectProduct />} />
+
+        <Route path="khachHang_DatHang" element={<ScreenListOrder />} />
+
+        <Route path="sanPham_DaBan" element={<ScreenListProductProfit />} />
+
+        <Route path="thongKe_loiNhuan" element={<ScreenStatistical />} />
+
+        <Route path="thongTin_shop" element={<ScreenInfoAdmin />} />
+
+        <Route path="danhSach_NguoiDung" element={<ScreenListUser />} />
+
+        <Route path="themBai_Viet" element={<ScreenCreatePost />} />
+
+        <Route path="danhSach_baiViet" element={<ScreenListPost />} />
       </Route>
     </Routes>
   );
