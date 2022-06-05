@@ -11,17 +11,20 @@ import {
 } from "@ant-design/icons";
 import { Content, Header } from "antd/lib/layout/layout";
 import "../Common/Styles/Layout.css";
-import logo from "../Common//Image/Logo.png";
-import image2 from "../Common/Image/image 2.png";
-import image4 from "../Common/Image/image 4.png";
-import Vector from "../Common/Image/Vector.png";
-import image5 from "../Common/Image/image 5.png";
-import image6 from "../Common/Image/image 6.png";
-import image7 from "../Common/Image/image 7.png";
-import image8 from "../Common/Image/image 8.png";
-import image9 from "../Common/Image/image 9.png";
-import Checkout from "../Common/Image/Checkout.png";
-import styles from "../Common/Styles/Layout.module.css";
+import logo from "../Common//image/Logo.png";
+import image2 from "../Common/image/image2.png";
+import image4 from "../Common/image/image4.png";
+import Vector from "../Common/image/Vector.png";
+import image5 from "../Common/image/image5.png";
+import image6 from "../Common/image/image6.png";
+import image7 from "../Common/image/image7.png";
+import image8 from "../Common/image/image8.png";
+import image9 from "../Common/image/image9.png";
+import imager10 from "../Common/image/imager10.png";
+
+import Checkout from "../Common/image/Checkout.png";
+import styles from "../Common/styles/Layout.module.css";
+import { NavLink, Outlet } from "react-router-dom";
 const { Sider } = Layout;
 function getItem(label, key, icon, children, type) {
   return {
@@ -50,47 +53,67 @@ function LayoutAdmin() {
         <div className={styles.view_tt}>
           <div className="tt">NewYork Mỹ</div>
           <div>+998766546778 </div> <div> Adomitosws</div>
-          <Button
-            icon={<UserSwitchOutlined />}
-            type="text"
-            style={{
-              border: "1px solid rgb(226, 226, 226)",
-            }}
-          >
-            Thông tin
-          </Button>
-          <Button
-            icon={<LogoutOutlined />}
-            type="text"
-            style={{
-              border: "1px solid rgb(226, 226, 226)",
-              marginLeft: 10,
-            }}
-          >
-            Đăng xuất
-          </Button>
+          <div style={{ justifyContent: "center", textAlign: "center" }}>
+            <Button
+              icon={<LogoutOutlined />}
+              type="text"
+              style={{
+                border: "1px solid rgb(226, 226, 226)",
+                marginLeft: 10,
+              }}
+            >
+              Đăng xuất
+            </Button>
+          </div>
         </div>
       </div>
     </Menu>
   );
   const items = [
     getItem(
-      "Tổng Quan",
-      "sub1",
-      <img style={{ width: "10%" }} src={image2} alt="" />,
-      [getItem("Option 1", "1"), getItem("Option 1", "10")]
+      ["Tổng Quan",<NavLink to="home"/>],
+      "home",
+      <img style={{ width: "10%" }} src={image2} alt="" />
     ),
     getItem(
       "Sản Phẩm",
       "sub2",
       <img style={{ width: "10%" }} src={image4} alt="" />,
-      [getItem("Option 2", "2"), getItem("Option 2", "11")]
+      [
+        getItem(
+          ["Danh sách sản phẩm",<NavLink to="home-admin"/>],
+          "2",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+        getItem(
+          ["Thêm sản phẩm",<NavLink to='admin'/>],
+          "11",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+      ]
     ),
     getItem(
       "Thể Loại",
       "sub3",
       <img style={{ width: "10%" }} src={Vector} alt="" />,
-      [getItem("Option 3", "3"), getItem("Option 3", "12")]
+      [
+        getItem(
+          "Đối tượng sử dụng",
+          "3",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+        ,
+        getItem(
+          "Danh sách thể loại",
+          "12",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+        getItem(
+          "Thêm thể loại",
+          "333",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+      ]
     ),
     getItem(
       "Bán Hàng",
@@ -99,34 +122,53 @@ function LayoutAdmin() {
       [getItem("Option 4", "4"), getItem("Option 6", "13")]
     ),
     getItem(
-      "Hoá đơn",
+      "Khách hàng đặt hàng",
       "sub5",
-      <img style={{ width: "10%" }} src={image5} alt="" />,
-      [getItem("Option 5", "5"), getItem("Option 6", "14")]
+      <img style={{ width: "10%" }} src={image5} alt="" />
     ),
     getItem(
       "Lợi Nhuận",
       "sub6",
       <img style={{ width: "10%" }} src={image6} alt="" />,
-      [getItem("Option 6", "6"), getItem("Option 6", "15")]
+      [
+        getItem(
+          "Sản phẩm đã bán",
+          "6",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+        getItem(
+          "Thống kê lợi nhuận",
+          "15",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+      ]
     ),
     getItem(
-      "Mọi Người",
+      "Người dùng",
       "sub7",
-      <img style={{ width: "10%" }} src={image7} alt="" />,
-      [getItem("Option 7", "7"), getItem("Option 6", "16")]
+      <img style={{ width: "10%" }} src={image7} alt="" />
     ),
     getItem(
-      "Phản Hồi",
+      "Mạng xã hội",
       "sub8",
       <img style={{ width: "10%" }} src={image8} alt="" />,
-      [getItem("Option 8", "8"), getItem("Option 6", "17")]
+      [
+        getItem(
+          "Đăng bài viết",
+          "8",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+        getItem(
+          "Bài viết của bạn",
+          "17",
+          <img style={{ width: "10%" }} src={imager10} alt="" />
+        ),
+      ]
     ),
     getItem(
-      "Khác",
+      "Thông tin cá nhân",
       "sub9",
-      <img style={{ width: "10%" }} src={image9} alt="" />,
-      [getItem("Option 9", "9"), getItem("Option 6", "18")]
+      <img style={{ width: "10%" }} src={image9} alt="" />
     ),
   ];
   return (
@@ -162,7 +204,12 @@ function LayoutAdmin() {
             }
           />
         </div>
-        <Menu onClick={onClick} mode="inline" items={items} />
+        <Menu
+          onClick={onClick}
+          mode="inline"
+          items={items}
+          defaultSelectedKeys={["1"]}
+        />
       </Sider>
       <Layout className="site-layout">
         <Header className={styles.site_layout_background}>
@@ -201,7 +248,7 @@ function LayoutAdmin() {
             minHeight: 280,
           }}
         >
-          Content
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
