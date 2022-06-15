@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import LayoutAdmin from "../components/LayoutAdmin";
 
@@ -34,45 +34,67 @@ import ScreenListUser from "../container/screens/everyone/ScreenListUser";
 import ScreenCreatePost from "../container/screens/posts/ScreenCreatePost";
 import ScreenListPost from "../container/screens/posts/ScreenListPost";
 
+//màu size
+import ColorSize from "../container/screens/colorsize/ColorSize";
+
+//banner
+import BannerSplash from "../container/screens/banner/BannerSplash";
+import BannerHome from "../container/screens/banner/BannerHome";
+import BannerMen from "../container/screens/banner/BannerMen";
+import BannerWomen from "../container/screens/banner/BannerWomen";
+
 const Router = () => {
   return (
-    <Routes>
-      <Route path="/shop_dang_nhap" element={<ScreenLogin />}></Route>
-      <Route
-        path="/shop_quen_mat_khau"
-        element={<ScreenForgotPassword />}
-      ></Route>
-      <Route path="/shop" element={<LayoutAdmin />}>
-        <Route path="tong_quan" element={<ScreenOverview />} />
-
-        <Route path="them_sanPham" element={<ScreenCreateProduct />} />
-
-        <Route path="danhSach_sanPham" element={<ScreenListProduct />} />
-
-        <Route path="them_LoaiSanPham" element={<ScreenCreateTypeProduct />} />
-
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ScreenLogin />} />
+        {/* <Route path="/shop_dang_nhap" element={<ScreenLogin />}></Route> */}
         <Route
-          path="danhSach_LoaiSanPham"
-          element={<ScreenListTypeProduct />}
-        />
+          path="/shop_quen_mat_khau"
+          element={<ScreenForgotPassword />}
+        ></Route>
+        <Route path="shop/" element={<LayoutAdmin />}>
+          <Route path="tong_quan" element={<ScreenOverview />} />
 
-        <Route path="doiTuong_SuDung" element={<ScreenObjectProduct />} />
+          <Route path="them_sanPham" element={<ScreenCreateProduct />} />
 
-        <Route path="khachHang_DatHang" element={<ScreenListOrder />} />
+          <Route path="danhSach_sanPham" element={<ScreenListProduct />} />
 
-        <Route path="sanPham_DaBan" element={<ScreenListProductProfit />} />
+          <Route
+            path="them_LoaiSanPham"
+            element={<ScreenCreateTypeProduct />}
+          />
 
-        <Route path="thongKe_loiNhuan" element={<ScreenStatistical />} />
+          <Route
+            path="danhSach_LoaiSanPham"
+            element={<ScreenListTypeProduct />}
+          />
 
-        <Route path="thongTin_shop" element={<ScreenInfoAdmin />} />
+          <Route path="doiTuong_SuDung" element={<ScreenObjectProduct />} />
 
-        <Route path="danhSach_NguoiDung" element={<ScreenListUser />} />
+          <Route path="khachHang_DatHang" element={<ScreenListOrder />} />
 
-        <Route path="themBai_Viet" element={<ScreenCreatePost />} />
+          <Route path="sanPham_DaBan" element={<ScreenListProductProfit />} />
 
-        <Route path="danhSach_baiViet" element={<ScreenListPost />} />
-      </Route>
-    </Routes>
+          <Route path="thongKe_loiNhuan" element={<ScreenStatistical />} />
+
+          <Route path="thongTin_shop" element={<ScreenInfoAdmin />} />
+
+          <Route path="danhSach_NguoiDung" element={<ScreenListUser />} />
+
+          <Route path="themBai_Viet" element={<ScreenCreatePost />} />
+
+          <Route path="danhSach_baiViet" element={<ScreenListPost />} />
+
+          <Route path="mau_size" element={<ColorSize />} />
+
+          <Route path="banner_home" element={<BannerHome />} />
+          <Route path="banner_men" element={<BannerMen />} />
+          <Route path="banner_women" element={<BannerWomen />} />
+          <Route path="banner_splash" element={<BannerSplash />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
